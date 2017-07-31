@@ -26,7 +26,6 @@
   },
   "dependencies": {
     "js2xmlparser": "^3.0.0",
-    "lodash": "^4.17.4",
-    "options": "0.0.6"
+    "lodash": "^4.17.4"
   }
 }
