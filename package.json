@@ -1,6 +1,6 @@
 {
   "name": "minimal-sitemap",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Builds a sitemap from an array of strings.",
   "main": "index.js",
   "scripts": {
