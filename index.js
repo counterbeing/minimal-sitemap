@@ -1,7 +1,7 @@
-var Options = require('options')
 var j2x = require('js2xmlparser')
 var _ = require('lodash')
 var nurl = require('url')
+var fs = require('fs')
 
 var toSiteMap = function(options) {
   var defaults = {
@@ -9,6 +9,16 @@ var toSiteMap = function(options) {
   }
   options = _.merge(defaults, options)
   return buildXML(options.urls, options.prefix)
+}
+
+var toSiteMapFile = function(options) {
+  var defaults = {
+    file: null,
+    prefix: ''
+  }
+  options = _.merge(defaults, options)
+  let xml = buildXML(options.urls, options.prefix)
+  fs.writeFileSync(options.file, xml)
 }
 
 function buildXML(urls, prefix) {
