@@ -1,7 +1,8 @@
-var j2x = require('js2xmlparser')
-var _ = require('lodash')
-var nurl = require('url')
-var fs = require('fs')
+const j2x = require('js2xmlparser')
+const _ = require('lodash')
+const nurl = require('url')
+const fs = require('fs')
+const xml2js = require('xml2js')
 
 var toSiteMap = function(options) {
   var defaults = {
@@ -21,6 +22,10 @@ var toSiteMapFile = function(options) {
   fs.writeFileSync(options.file, xml)
 }
 
+function combineXML(xmlA, xmlB) {
+
+}
+
 function buildXML(urls, prefix) {
   var locs = _.map(urls, function(url) {
     var joined = nurl.resolve(prefix, url)
@@ -37,4 +42,5 @@ function buildXML(urls, prefix) {
 module.exports = {
   toSiteMap: toSiteMap,
   toSiteMapFile: toSiteMapFile,
+  combineXML: combineXML,
 }
