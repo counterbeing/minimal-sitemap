@@ -23,6 +23,12 @@ var toSiteMapFile = function(options) {
   fs.writeFileSync(options.file, xml)
 }
 
+function mergeSitemapFiles(file1, file2) {
+  let content1 = fs.readFileSync(file1)
+  let content2 = fs.readFileSync(file2)
+  return combineXML(content1, content2)
+}
+
 function combineXML(xmlA, xmlB) {
   let objA = convert.xml2js(xmlA)["elements"][0]["elements"]
   let objB = convert.xml2js(xmlB)["elements"][0]["elements"]
@@ -62,4 +68,5 @@ module.exports = {
   toSiteMap: toSiteMap,
   toSiteMapFile: toSiteMapFile,
   combineXML: combineXML,
+  mergeSitemapFiles: mergeSitemapFiles,
 }
