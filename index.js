@@ -35,5 +35,6 @@ function buildXML(urls, prefix) {
 }
 
 module.exports = {
-  toSiteMap: toSiteMap
+  toSiteMap: toSiteMap,
+  toSiteMapFile: toSiteMapFile,
 }
