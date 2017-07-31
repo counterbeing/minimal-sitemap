@@ -23,6 +23,6 @@ describe('combineXML',  function () {
     let xmlA = fs.readFileSync('test/fixtures/one.xml')
     let xmlB = fs.readFileSync('test/fixtures/two.xml')
     let result = ms.combineXML(xmlA, xmlB)
-    expect(result).to.be('<?xml version=\'1.0\'?>\n<urlset xmlns=\'http://www.sitemaps.org/schemas/sitemap/0.9\'>\n    <url>\n        <loc>one</loc>\n    </url>\n    <url>\n        <loc>two</loc>\n    </url>\n</urlset>')
+    expect(result).to.be('<?xml version="1.0" encoding="utf-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>one</loc></url><url><loc>two</loc></url></urlset>')
   })
 })
